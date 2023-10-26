@@ -15,7 +15,7 @@ const Slider = ({ children, sliderCount }) => {
   };
   console.log(sliderCount);
   return (
-    <div className='slider rounded-lg flex justify-center items-center flex-col h-[50vh] lg:h-[70vh] max-w-[1140px] mx-auto relative'>
+    <div className='slider rounded-lg flex justify-center items-center flex-col h-[50vh] lg:h-[70vh] max-w-[1240px] mx-auto relative'>
       <div className='slider-content w-full overflow-hidden bg-slate-300 rounded-lg'>
         <div
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -24,7 +24,7 @@ const Slider = ({ children, sliderCount }) => {
           {children}
         </div>
       </div>
-      <div className='flex justify-center items-center gap-3 absolute bottom-[15vw] right-[1vw] scale-[0.6] md:scale-[1]'>
+      <div className='flex justify-center items-center gap-3 absolute md:bottom-[30px] md:right-[30px] bottom-[40px] right-[0px] scale-[0.6] md:scale-[1]'>
         <div className='rounded-full bg-slate-300 bg-opacity-[0.29] p-2'>
           <BsArrowRightShort
             className='text-[32px] text-white cursor-pointer rotate-180'
