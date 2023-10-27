@@ -200,7 +200,7 @@ const Home = () => {
           believable.
         </p>
         {/* testimonial cards */}
-        <div className='my-10 flex justify-between items-center'>
+        <div className='my-10 flex justify-between items-center flex-wrap gap-6'>
           <div className='border-2 rounded-lg p-12 w-fit'>
             <div className='flex justify-between items-center gap-20'>
               <div className='flex justify-center items-center gap-3'>

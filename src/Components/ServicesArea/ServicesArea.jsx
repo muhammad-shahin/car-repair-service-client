@@ -3,14 +3,20 @@ import { useEffect, useState } from 'react';
 import ServicesCard from '../../ReuseableComponents/Card/Card';
 import OutlineButton from '../../ReuseableComponents/OutlineButton';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 const ServicesArea = () => {
+  const navigate = useNavigate();
   const [serviceData, setServiceData] = useState([]);
   useEffect(() => {
     axios.get('/servicesArea.json').then((res) => {
       setServiceData(res.data);
     });
   }, []);
+
+  const handleOnCardClick = () => {
+    navigate('/servicesDetails');
+  };
   return (
     <div className='my-10 '>
       <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
@@ -18,6 +24,7 @@ const ServicesArea = () => {
           <ServicesCard
             key={index}
             image={service.serviceImage}
+            handleOnClick={handleOnCardClick}
           >
             <div className='space-y-4 mt-4'>
               <h3 className='text-2xl font-bold'>{service.serviceTitle}</h3>

@@ -54,7 +54,7 @@ const Navbar = () => {
             setOpen(false);
           }}
         >
-          <NavLink to='/blog'>Blog</NavLink>
+          <NavLink to='/contact'>Contact</NavLink>
         </li>
         <li
           className='text-black font-medium text-[16px] hover:scale-[1.1] duration-500'
@@ -62,7 +62,7 @@ const Navbar = () => {
             setOpen(false);
           }}
         >
-          <NavLink to='/contact'>Contact</NavLink>
+          <NavLink to='/login'>Login</NavLink>
         </li>
       </ul>
       {/* cart icons */}

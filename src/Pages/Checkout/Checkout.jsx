@@ -1,0 +1,57 @@
+import Input from '../../ReuseableComponents/Input/Input';
+import PageHeader from '../../ReuseableComponents/PageHeader/PageHeader';
+
+const Checkout = () => {
+  return (
+    <div>
+      <PageHeader
+        title='Checkout'
+        pageLocation='Home/Services Details/Checkout'
+      />
+      <div className='bg-gray-300 p-28 my-40'>
+        <form className='w-fit mx-auto space-y-8'>
+          <div className='flex gap-6'>
+            <Input
+              name='firstName'
+              placeholder={'First Name'}
+              type={'text'}
+            />
+            <Input
+              name='lastName'
+              placeholder={'Last Name'}
+              type={'text'}
+            />
+          </div>
+          <div className='flex gap-6'>
+            <Input
+              name='phone'
+              placeholder={'Your Phone'}
+              type={'tel'}
+            />
+            <Input
+              name='email'
+              placeholder={'Your Email'}
+              type={'email'}
+            />
+          </div>
+          <textarea
+            placeholder={'Write Details About Your Car Problem'}
+            className='px-5 py-2 rounded text-[18px] outline-none w-full'
+            name=''
+            id=''
+            cols='30'
+            rows='10'
+            required
+          ></textarea>
+          <input
+            type='submit'
+            value='Book A Schedule'
+            className='px-5 py-2 rounded text-[18px] outline-none w-full bg-[#FF3811] font-medium text-white cursor-pointer '
+          />
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Checkout;
