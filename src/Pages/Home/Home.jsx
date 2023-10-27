@@ -13,10 +13,11 @@ import Products from '../../Components/Products/Products';
 import TeamCard from '../../Components/TeamsCard/TeamCard';
 import CoreFeaturesCard from '../../ReuseableComponents/CoreFeaturesCard/CoreFeaturesCard';
 import team from '../../assets/icons/Expert Team.svg';
-import timeDelivery from '../../assets/icons/Timely Delivery.svg';
 import support from '../../assets/icons/247 Support.svg';
 import equipment from '../../assets/icons/Best Equipment.svg';
 import fast from '../../assets/icons/Timely Delivery (2).svg';
+import quote from '../../assets/icons/quote.svg';
+import StarRating from '../../Components/StarRating/StarRating';
 
 const Home = () => {
   const [caurosolData, setCaurosolData] = useState([]);
@@ -198,6 +199,59 @@ const Home = () => {
           humour, or randomised words which don&apos;t look even slightly
           believable.
         </p>
+        {/* testimonial cards */}
+        <div className='my-10 flex justify-between items-center'>
+          <div className='border-2 rounded-lg p-12 w-fit'>
+            <div className='flex justify-between items-center gap-20'>
+              <div className='flex justify-center items-center gap-3'>
+                <img
+                  src='https://i.ibb.co/JBf16h6/j-BLACK-BLENDED-KAMEEZ-SHALWAR2.webp'
+                  className='w-[60px] h-[60px] object-top object-cover rounded-full'
+                />
+                <div>
+                  <p className='text-2xl font-bold'>Muhammad Shahin</p>
+                  <p className='text-xl font-medium text-gray-300'>
+                    Businessman
+                  </p>
+                </div>
+              </div>
+              <img src={quote} />
+            </div>
+            <div className='space-y-3'>
+              <p className='text-lg max-w-[450px] mx-auto text-center mt-6 capitalize'>
+                The majority have suffered alteration in some form, by injected
+                humour, or randomised words which don&apos;t look even slightly
+                believable.
+              </p>
+              <StarRating initialRating={5} />
+            </div>
+          </div>
+          <div className='border-2 rounded-lg p-12 w-fit'>
+            <div className='flex justify-between items-center gap-20'>
+              <div className='flex justify-center items-center gap-3'>
+                <img
+                  src='https://i.ibb.co/W5YRR9b/addidas-hoddie-joggers.jpg'
+                  className='w-[60px] h-[60px] object-top object-cover rounded-full'
+                />
+                <div>
+                  <p className='text-2xl font-bold'>Motin Vai</p>
+                  <p className='text-xl font-medium text-gray-300'>
+                    Businessman
+                  </p>
+                </div>
+              </div>
+              <img src={quote} />
+            </div>
+            <div className='space-y-3'>
+              <p className='text-lg max-w-[450px] mx-auto text-center mt-6 capitalize'>
+                The majority have suffered alteration in some form, by injected
+                humour, or randomised words which don&apos;t look even slightly
+                believable.
+              </p>
+              <StarRating initialRating={5} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
