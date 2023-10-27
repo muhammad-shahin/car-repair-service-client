@@ -8,6 +8,7 @@ import aboutImage1 from '../../assets/images/about_us/person.jpg';
 import aboutImage2 from '../../assets/images/about_us/parts.jpg';
 import ServicesCard from '../../ReuseableComponents/ServicesCard/ServicesCard';
 import ServicesArea from '../../Components/ServicesArea/ServicesArea';
+import ContactCard from '../../Components/ContactCard/ContactCard';
 
 const Home = () => {
   const [caurosolData, setCaurosolData] = useState([]);
@@ -108,6 +109,11 @@ const Home = () => {
         <div>
           <ServicesArea />
         </div>
+      </div>
+
+      {/* contacts card section */}
+      <div>
+        <ContactCard />
       </div>
     </div>
   );
