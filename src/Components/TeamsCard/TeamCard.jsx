@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ServicesCard from '../../ReuseableComponents/Card/Card';
-import Slider from '../../ReuseableComponents/Slider/Slider';
 import SocialIcons from '../SocialICons/SocialIcons';
 
 const TeamCard = () => {

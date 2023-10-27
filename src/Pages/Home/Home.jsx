@@ -7,11 +7,16 @@ import OutlineButton from '../../ReuseableComponents/OutlineButton';
 import SectionHeading from '../../ReuseableComponents/SectionHeading';
 import aboutImage1 from '../../assets/images/about_us/person.jpg';
 import aboutImage2 from '../../assets/images/about_us/parts.jpg';
-import ServicesCard from '../../ReuseableComponents/Card/Card';
 import ServicesArea from '../../Components/ServicesArea/ServicesArea';
 import ContactCard from '../../Components/ContactCard/ContactCard';
 import Products from '../../Components/Products/Products';
 import TeamCard from '../../Components/TeamsCard/TeamCard';
+import CoreFeaturesCard from '../../ReuseableComponents/CoreFeaturesCard/CoreFeaturesCard';
+import team from '../../assets/icons/Expert Team.svg';
+import timeDelivery from '../../assets/icons/Timely Delivery.svg';
+import support from '../../assets/icons/247 Support.svg';
+import equipment from '../../assets/icons/Best Equipment.svg';
+import fast from '../../assets/icons/Timely Delivery (2).svg';
 
 const Home = () => {
   const [caurosolData, setCaurosolData] = useState([]);
@@ -145,6 +150,54 @@ const Home = () => {
           believable.
         </p>
         <TeamCard />
+      </div>
+
+      {/* why chose us section */}
+      <div className='my-20'>
+        <SectionHeading
+          sectionName='Core Features'
+          sectionTitle='Why Choose Us'
+        />
+        <p className='text-lg max-w-[450px] mx-auto text-center mt-6 capitalize'>
+          The majority have suffered alteration in some form, by injected
+          humour, or randomised words which don&apos;t look even slightly
+          believable.
+        </p>
+        <div className='flex justify-center items-center gap-4 my-10 flex-wrap'>
+          <CoreFeaturesCard
+            title='Expert Team'
+            logo={team}
+          />
+          <CoreFeaturesCard
+            title='Timely Delivery'
+            logo={fast}
+          />
+          <CoreFeaturesCard
+            title='24/7 Support'
+            logo={support}
+          />
+          <CoreFeaturesCard
+            title='Best Equipment'
+            logo={equipment}
+          />
+          <CoreFeaturesCard
+            title='100% Guaranty'
+            logo={support}
+          />
+        </div>
+      </div>
+
+      {/* testimonial Section */}
+      <div>
+        <SectionHeading
+          sectionName='Testimonials'
+          sectionTitle='What Customer Says'
+        />
+        <p className='text-lg max-w-[450px] mx-auto text-center mt-6 capitalize'>
+          The majority have suffered alteration in some form, by injected
+          humour, or randomised words which don&apos;t look even slightly
+          believable.
+        </p>
       </div>
     </div>
   );

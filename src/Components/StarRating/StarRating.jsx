@@ -18,9 +18,9 @@ const StarRating = ({ initialRating }) => {
           onClick={() => handleClick(i)}
         >
           {i <= rating ? (
-            <AiFillStar className='text-[18px] text-blue-500' />
+            <AiFillStar className='text-[18px] text-orange-500' />
           ) : (
-            <AiOutlineStar className='text-[18px] text-blue-500' />
+            <AiOutlineStar className='text-[18px] text-orange-500' />
           )}
         </span>
       );
