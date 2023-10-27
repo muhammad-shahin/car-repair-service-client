@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './Slider.css';
 import PropTypes from 'prop-types';
 import { BsArrowRightShort } from 'react-icons/bs';
 
@@ -13,7 +12,6 @@ const Slider = ({ children, sliderCount }) => {
   const nextSlide = () => {
     setCurrentSlide(Math.min(currentSlide + 1, sliderCount - 1));
   };
-  console.log(sliderCount);
   return (
     <div className='slider rounded-lg flex justify-center items-center flex-col h-[50vh] lg:h-[70vh] max-w-[1240px] mx-auto relative'>
       <div className='slider-content w-full overflow-hidden bg-slate-300 rounded-lg'>

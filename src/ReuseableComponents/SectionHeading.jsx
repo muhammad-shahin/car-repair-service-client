@@ -8,7 +8,7 @@ const SectionHeading = ({ sectionName, sectionTitle, position }) => {
       }  `}
     >
       <p className='text-[#FF3811] font-medium text-lg'>{sectionName}</p>
-      <h2 className='text-4xl font-bold max-w-[376px]'>{sectionTitle}</h2>
+      <h2 className='text-4xl font-bold  mx-auto'>{sectionTitle}</h2>
     </div>
   );
 };

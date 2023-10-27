@@ -1,0 +1,32 @@
+[
+  {
+    "serviceTitle": "Oil Change",
+    "servicePrice": "49.99",
+    "serviceImage": "https://i.ibb.co/sQCFMZF/car-repair-service-2.jpg"
+  },
+  {
+    "serviceTitle": "Brake Replacement",
+    "servicePrice": "129.99",
+    "serviceImage": "https://i.ibb.co/6sGCCrj/car-repair-service-3.jpg"
+  },
+  {
+    "serviceTitle": "Tire Rotation",
+    "servicePrice": "39.99",
+    "serviceImage": "https://i.ibb.co/R310TZs/car-repair-service-4.jpg"
+  },
+  {
+    "serviceTitle": "Engine Tune-Up",
+    "servicePrice": "89.99",
+    "serviceImage": "https://i.ibb.co/7pw2BBy/car-repair-service-5.jpg"
+  },
+  {
+    "serviceTitle": "Air Conditioning Repair",
+    "servicePrice": "79.99",
+    "serviceImage": "https://i.ibb.co/XtvbGt1/car-repair-service-6.jpg"
+  },
+  {
+    "serviceTitle": "Diagnostic Service",
+    "servicePrice": "59.99",
+    "serviceImage": "https://i.ibb.co/hK0Qyjn/car-repair-service-1.jpg"
+  }
+]

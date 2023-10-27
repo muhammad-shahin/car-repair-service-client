@@ -6,6 +6,8 @@ import OutlineButton from '../../ReuseableComponents/OutlineButton';
 import SectionHeading from '../../ReuseableComponents/SectionHeading';
 import aboutImage1 from '../../assets/images/about_us/person.jpg';
 import aboutImage2 from '../../assets/images/about_us/parts.jpg';
+import ServicesCard from '../../ReuseableComponents/ServicesCard/ServicesCard';
+import ServicesArea from '../../Components/ServicesArea/ServicesArea';
 
 const Home = () => {
   const [caurosolData, setCaurosolData] = useState([]);
@@ -13,7 +15,6 @@ const Home = () => {
     axios
       .get('/homeCaurosol.json')
       .then((res) => {
-        console.log(res.data);
         setCaurosolData(res.data);
       })
       .catch((error) => {
@@ -75,6 +76,7 @@ const Home = () => {
             humour, or randomised words which don&apos;t look even slightly
             believable.
           </p>
+          <PrimaryButton text='Get More Info' />
         </div>
         {/* right side content */}
         <div className='relative my-20 tex'>
@@ -88,6 +90,23 @@ const Home = () => {
               className='absolute bottom-[-150px] right-[-120px] lg:w-[350px] lg:h-[370px] object-cover border-[10px] rounded-lg border-white xl:block hidden'
             />
           </div>
+        </div>
+      </div>
+
+      {/* our service area section  */}
+      <div className='my-28'>
+        <SectionHeading
+          sectionName='Services'
+          sectionTitle='Our Services Area'
+        />
+        <p className='text-lg max-w-[450px] mx-auto text-center mt-6'>
+          The majority have suffered alteration in some form, by injected
+          humour, or randomised words which don&apos;t look even slightly
+          believable.
+        </p>
+
+        <div>
+          <ServicesArea />
         </div>
       </div>
     </div>
