@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import OutlineButton from '../../ReuseableComponents/OutlineButton';
 import ServicesCard from '../../ReuseableComponents/Card/Card';
-import { MdKeyboardArrowRight } from 'react-icons/md';
 import StarRating from '../StarRating/StarRating';
 import PrimaryButton from '../../ReuseableComponents/PrimaryButton';
 

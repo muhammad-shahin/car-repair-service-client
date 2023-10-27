@@ -11,6 +11,7 @@ import ServicesCard from '../../ReuseableComponents/Card/Card';
 import ServicesArea from '../../Components/ServicesArea/ServicesArea';
 import ContactCard from '../../Components/ContactCard/ContactCard';
 import Products from '../../Components/Products/Products';
+import TeamCard from '../../Components/TeamsCard/TeamCard';
 
 const Home = () => {
   const [caurosolData, setCaurosolData] = useState([]);
@@ -102,7 +103,7 @@ const Home = () => {
           sectionName='Services'
           sectionTitle='Our Services Area'
         />
-        <p className='text-lg max-w-[450px] mx-auto text-center mt-6'>
+        <p className='text-lg max-w-[450px] mx-auto text-center mt-6 capitalize'>
           The majority have suffered alteration in some form, by injected
           humour, or randomised words which don&apos;t look even slightly
           believable.
@@ -124,12 +125,26 @@ const Home = () => {
           sectionName='Popular Products'
           sectionTitle='Browse Our Products'
         />
-        <p className='text-lg max-w-[450px] mx-auto text-center mt-6'>
+        <p className='text-lg max-w-[450px] mx-auto text-center mt-6 capitalize'>
           the majority have suffered alteration in some form, by injected
           humour, or randomised words which don&apos;t look even slightly
           believable.
         </p>
         <Products />
+      </div>
+
+      {/* teams section */}
+      <div className='my-20'>
+        <SectionHeading
+          sectionName='Team'
+          sectionTitle='Meet Our Team'
+        />
+        <p className='text-lg max-w-[450px] mx-auto text-center mt-6 capitalize'>
+          The majority have suffered alteration in some form, by injected
+          humour, or randomised words which don&apos;t look even slightly
+          believable.
+        </p>
+        <TeamCard />
       </div>
     </div>
   );

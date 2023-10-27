@@ -14,7 +14,7 @@ const Slider = ({ children, sliderCount }) => {
   };
   return (
     <div className='slider rounded-lg flex justify-center items-center flex-col h-[50vh] lg:h-[70vh] max-w-[1240px] mx-auto relative'>
-      <div className='slider-content w-full overflow-hidden bg-slate-300 rounded-lg'>
+      <div className='slider-content w-full overflow-hidden rounded-lg'>
         <div
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           className={`slide flex duration-300 transition-transform translate-x-[-100%]`}
@@ -25,7 +25,7 @@ const Slider = ({ children, sliderCount }) => {
       <div className='flex justify-center items-center gap-3 absolute md:bottom-[30px] md:right-[30px] bottom-[40px] right-[0px] scale-[0.6] md:scale-[1]'>
         <div className='rounded-full bg-slate-300 bg-opacity-[0.29] p-2'>
           <BsArrowRightShort
-            className='text-[32px] text-white cursor-pointer rotate-180'
+            className='text-[32px] text-[#FF3811] cursor-pointer rotate-180'
             onClick={prevSlide}
           />
         </div>
