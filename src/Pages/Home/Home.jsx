@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react';
 import Slider from '../../ReuseableComponents/Slider/Slider';
 import axios from 'axios';
@@ -6,9 +7,10 @@ import OutlineButton from '../../ReuseableComponents/OutlineButton';
 import SectionHeading from '../../ReuseableComponents/SectionHeading';
 import aboutImage1 from '../../assets/images/about_us/person.jpg';
 import aboutImage2 from '../../assets/images/about_us/parts.jpg';
-import ServicesCard from '../../ReuseableComponents/ServicesCard/ServicesCard';
+import ServicesCard from '../../ReuseableComponents/Card/Card';
 import ServicesArea from '../../Components/ServicesArea/ServicesArea';
 import ContactCard from '../../Components/ContactCard/ContactCard';
+import Products from '../../Components/Products/Products';
 
 const Home = () => {
   const [caurosolData, setCaurosolData] = useState([]);
@@ -114,6 +116,20 @@ const Home = () => {
       {/* contacts card section */}
       <div>
         <ContactCard />
+      </div>
+
+      {/* products section */}
+      <div className='my-20'>
+        <SectionHeading
+          sectionName='Popular Products'
+          sectionTitle='Browse Our Products'
+        />
+        <p className='text-lg max-w-[450px] mx-auto text-center mt-6'>
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don&apos;t look even slightly
+          believable.
+        </p>
+        <Products />
       </div>
     </div>
   );
