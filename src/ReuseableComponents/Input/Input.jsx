@@ -9,6 +9,7 @@ const Input = ({
   errorMessage,
   labelText,
   onBlur,
+  value
 }) => {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -24,6 +25,7 @@ const Input = ({
         placeholder={placeholder}
         onChange={onChange}
         onBlur={onBlur}
+        value={value}
         required
       />
       {type === 'password' && (
@@ -50,6 +52,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   errorMessage: PropTypes.string,
   labelText: PropTypes.string,
+  value: PropTypes.string,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
 };

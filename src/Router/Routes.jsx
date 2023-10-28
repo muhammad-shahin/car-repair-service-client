@@ -4,6 +4,7 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import ServiceDetails from '../Pages/ServiceDetails/ServiceDetails';
 import SignUp from '../Pages/SignUp/SignUp';
+import PrivateRoute from './PrivateRoute';
 
 const routes = [
   {
@@ -15,8 +16,14 @@ const routes = [
         element: <Home />,
       },
       {
-        path: '/servicesDetails',
-        element: <ServiceDetails />,
+        path: '/servicesDetails/:serviceId',
+        element: (
+          <PrivateRoute>
+            <ServiceDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.serviceId}`),
       },
       {
         path: '/checkout',

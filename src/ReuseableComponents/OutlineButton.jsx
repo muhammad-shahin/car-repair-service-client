@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const OutlineButton = ({ text, color }) => {
+const OutlineButton = ({ text, color, handleClick }) => {
   return (
     <>
       <button
@@ -9,6 +9,7 @@ const OutlineButton = ({ text, color }) => {
             ? 'text-[#fff] border-[#fff]'
             : 'text-[#FF3811] border-[#FF3811] '
         } border bg-transparent hover:text-white hover:border-[#FF3811] hover:bg-[#FF3811] duration-500`}
+        onClick={handleClick}
       >
         {text}
       </button>
@@ -18,7 +19,7 @@ const OutlineButton = ({ text, color }) => {
 
 OutlineButton.propTypes = {
   text: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
 };
 
 export default OutlineButton;

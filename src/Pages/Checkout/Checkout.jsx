@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import Input from '../../ReuseableComponents/Input/Input';
 import PageHeader from '../../ReuseableComponents/PageHeader/PageHeader';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Checkout = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div>
       <PageHeader
@@ -9,29 +12,35 @@ const Checkout = () => {
         pageLocation='Home/Services Details/Checkout'
       />
       <div className='bg-gray-300 p-28 my-40'>
-        <form className='w-fit mx-auto space-y-8'>
-          <div className='flex gap-6'>
+        <form className='max-w-[750px] mx-auto space-y-8'>
+          <div className='flex lg:flex-row flex-col gap-6'>
             <Input
-              name='firstName'
-              placeholder={'First Name'}
+              name='fullName'
+              placeholder={'Full Name'}
               type={'text'}
-            />
-            <Input
-              name='lastName'
-              placeholder={'Last Name'}
-              type={'text'}
-            />
-          </div>
-          <div className='flex gap-6'>
-            <Input
-              name='phone'
-              placeholder={'Your Phone'}
-              type={'tel'}
+              value={user?.displayName}
+              labelText='Full Name'
             />
             <Input
               name='email'
               placeholder={'Your Email'}
               type={'email'}
+              value={user?.email}
+              labelText='Email'
+            />
+          </div>
+          <div className='flex lg:flex-row flex-col gap-6'>
+            <Input
+              name='serviceName'
+              placeholder={'Service Name'}
+              type={'text'}
+              labelText='Service Name'
+            />
+            <Input
+              name='serviceDate'
+              placeholder={'When you need that service?'}
+              type={'date'}
+              labelText='Date of Service'
             />
           </div>
           <textarea

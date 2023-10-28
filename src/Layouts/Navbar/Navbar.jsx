@@ -1,22 +1,27 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '.././../assets/logo.svg';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Fade as Hamburger } from 'hamburger-react';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { PiMagnifyingGlassLight } from 'react-icons/pi';
 
 import './Navbar.css';
 import OutlineButton from '../../ReuseableComponents/OutlineButton';
+import { AuthContext } from '../../Provider/AuthProvider';
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const { user, logoutUser } = useContext(AuthContext);
+  console.log(user);
   return (
     <nav className='flex justify-between items-center pt-10'>
       {/* logo */}
       <div>
-        <img
-          src={logo}
-          className='w-[4rem] lg:w-[6rem]'
-        />
+        <Link to='/'>
+          <img
+            src={logo}
+            className='w-[4rem] lg:w-[6rem]'
+          />
+        </Link>
       </div>
       {/* nav menu */}
       <ul
@@ -69,7 +74,10 @@ const Navbar = () => {
       <div className='flex justify-center items-center gap-3'>
         <HiOutlineShoppingBag className='text-2xl md:block hidden' />
         <PiMagnifyingGlassLight className='text-2xl md:block hidden mr-3' />
-        <OutlineButton text='Appointment' />
+        <OutlineButton
+          handleClick={logoutUser}
+          text={`${user ? 'Sign Out' : 'Appointment'}`}
+        />
         {/* hamburger menu */}
         <div className='lg:hidden'>
           <Hamburger

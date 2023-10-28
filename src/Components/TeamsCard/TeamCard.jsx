@@ -7,7 +7,6 @@ const TeamCard = () => {
   const [teamMembersData, setteamMembersData] = useState([]);
   useEffect(() => {
     axios.get('/ourTeam.json').then((res) => {
-      console.log(res.data);
       setteamMembersData(res.data);
     });
   }, []);

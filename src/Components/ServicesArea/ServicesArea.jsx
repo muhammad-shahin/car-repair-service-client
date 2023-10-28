@@ -9,13 +9,13 @@ const ServicesArea = () => {
   const navigate = useNavigate();
   const [serviceData, setServiceData] = useState([]);
   useEffect(() => {
-    axios.get('/servicesArea.json').then((res) => {
+    axios.get('http://localhost:5000/services').then((res) => {
       setServiceData(res.data);
     });
   }, []);
 
-  const handleOnCardClick = () => {
-    navigate('/servicesDetails');
+  const handleOnCardClick = (id) => {
+    navigate(`/servicesDetails/${id}`);
   };
   return (
     <div className='my-10 '>
@@ -24,7 +24,9 @@ const ServicesArea = () => {
           <ServicesCard
             key={index}
             image={service.serviceImage}
-            handleOnClick={handleOnCardClick}
+            handleOnClick={() => {
+              handleOnCardClick(service._id);
+            }}
           >
             <div className='space-y-4 mt-4'>
               <h3 className='text-2xl font-bold'>{service.serviceTitle}</h3>

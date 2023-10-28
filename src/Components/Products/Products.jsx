@@ -9,7 +9,6 @@ const Products = () => {
   const [productsData, setProductsData] = useState([]);
   useEffect(() => {
     axios.get('/carRepairProducts.json').then((res) => {
-      console.log(res.data);
       setProductsData(res.data);
     });
   }, []);
