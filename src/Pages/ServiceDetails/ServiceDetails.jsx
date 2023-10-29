@@ -7,7 +7,7 @@ const ServiceDetails = () => {
   const serviceData = useLoaderData();
   const navigate = useNavigate();
   const handleOnBookNowClick = () => {
-    navigate('/checkout');
+    navigate(`/checkout/${serviceData._id}`);
   };
   return (
     <div>

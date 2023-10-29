@@ -7,8 +7,9 @@ import { useState } from 'react';
 import Modal from '../../ReuseableComponents/Modal';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import PageHeader from '../../ReuseableComponents/PageHeader/PageHeader';
 
-const Login = () => {
+const Admin = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [modalContent, setModalContent] = useState({
@@ -73,53 +74,53 @@ const Login = () => {
     }
   };
   return (
-    <div className='flex justify-center items-center gap-20 w-full h-screen'>
-      {/* left side image */}
-      <div className='hidden lg:block'>
-        <img src={sideImage} />
-      </div>
-      {/* right side sign up form  */}
-      <div className='border-2 rounded-lg p-10 space-y-8'>
-        <h1 className='font-bold text-4xl text-center'>
-          Login To Your Account
-        </h1>
-        <form
-          onSubmit={handleSignIn}
-          className='max-w-[350px] mx-auto space-y-6'
-        >
-          <Input
-            name='email'
-            labelText='Email'
-            placeholder='Enter Your Email'
-            type='text'
-          />
-          <Input
-            name='password'
-            labelText='Password'
-            placeholder='Enter your Password'
-            type='password'
-          />
-          <input
-            type='submit'
-            value='Login'
-            className='px-5 py-2 rounded text-[18px] outline-none w-full bg-[#FF3811] font-medium text-white cursor-pointer '
-          />
-        </form>
-        <div>
-          <p className='text-[18px] font-medium text-center mt-4'>
-            Don't have an account? {''}
-            <Link
-              to={'/sign-up'}
-              className='text-blue-500 underline'
-            >
-              Sign Up
-            </Link>
-          </p>
+    <section>
+      <PageHeader
+        pageLocation='Admin Panel'
+        title='Admin Login'
+      />
+      <div className='flex justify-center items-center gap-20 w-full min-h-[70vh]'>
+        {/* left side image */}
+        <div className='hidden lg:block'>
+          <img src={sideImage} />
         </div>
+        {/* right side sign up form  */}
+        <div className='border-2 rounded-lg p-10 space-y-8'>
+          <h1 className='font-bold text-4xl text-center max-w-[325px]'>
+            Login To Your Admin Account
+          </h1>
+          <form
+            onSubmit={handleSignIn}
+            className='max-w-[350px] mx-auto space-y-6'
+          >
+            <Input
+              name='email'
+              labelText='Email'
+              placeholder='Enter Your Email'
+              type='text'
+            />
+            <Input
+              name='password'
+              labelText='Password'
+              placeholder='Enter your Password'
+              type='password'
+            />
+            <input
+              type='submit'
+              value='Login'
+              className='px-5 py-2 rounded text-[18px] outline-none w-full bg-[#FF3811] font-medium text-white cursor-pointer '
+            />
+          </form>
+          <div>
+            <p className='text-[18px] font-medium text-center mt-4'>
+              This Panel is Only for Admin Login
+            </p>
+          </div>
+        </div>
+        <Modal modalContent={modalContent} />
       </div>
-      <Modal modalContent={modalContent} />
-    </div>
+    </section>
   );
 };
 
-export default Login;
+export default Admin;
