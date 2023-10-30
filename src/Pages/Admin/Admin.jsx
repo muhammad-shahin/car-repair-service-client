@@ -5,12 +5,11 @@ import sideImage from '../../assets/images/login/login.svg';
 import { auth } from '../../Configs/firebase.config';
 import { useState } from 'react';
 import Modal from '../../ReuseableComponents/Modal';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import PageHeader from '../../ReuseableComponents/PageHeader/PageHeader';
 
 const Admin = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [modalContent, setModalContent] = useState({
     modalStatus: false,
@@ -28,27 +27,36 @@ const Admin = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
-          setModalContent({
-            modalStatus: true,
-            title: 'Successfully Logged In',
-            message:
-              'Successfully Logged In Account. Now Redirecting to your Last State',
-          });
           // posting user email to generate token
           const email = { email: user?.email };
           axios
-            .post('http://localhost:5000/jwt', email, { withCredentials: true })
+            .post('http://localhost:5000/admin', email, {
+              withCredentials: true,
+            })
             .then((res) => {
               console.log(res.data);
               if (res.data.success) {
+                setModalContent({
+                  modalStatus: true,
+                  title: 'Successfully Logged In',
+                  message: 'Successfully Logged In To Admin Panel',
+                });
                 setTimeout(() => {
                   setModalContent({ ...modalContent, modalStatus: false });
-                  navigate(location?.state ? location?.state : '/');
+                  navigate('/admin-dashboard');
                 }, 1500);
               }
             })
             .catch((error) => {
               console.log(error);
+              setModalContent({
+                modalStatus: true,
+                title: 'Failed To Log In',
+                message: `${error.response.data.message}`,
+              });
+              setTimeout(() => {
+                setModalContent({ ...modalContent, modalStatus: false });
+              }, 1500);
             });
         })
         .catch((error) => {
@@ -76,7 +84,7 @@ const Admin = () => {
   return (
     <section>
       <PageHeader
-        pageLocation='Admin Panel'
+        pageLocation='Admin/Login'
         title='Admin Login'
       />
       <div className='flex justify-center items-center gap-20 w-full min-h-[70vh]'>
@@ -96,13 +104,13 @@ const Admin = () => {
             <Input
               name='email'
               labelText='Email'
-              placeholder='Enter Your Email'
+              placeholder='Enter Admin Email'
               type='text'
             />
             <Input
               name='password'
               labelText='Password'
-              placeholder='Enter your Password'
+              placeholder='Enter Admin Password'
               type='password'
             />
             <input

@@ -1,5 +1,6 @@
 import Root from '../Layouts/Root/Root';
 import Admin from '../Pages/Admin/Admin';
+import AdminDashboard from '../Pages/AdminDashboard/AdminDashboard';
 import Checkout from '../Pages/Checkout/Checkout';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
@@ -56,6 +57,10 @@ const routes = [
       {
         path: '/admin',
         element: <Admin />,
+      },
+      {
+        path: '/admin-dashboard',
+        element: <AdminDashboard />,
       },
     ],
   },
